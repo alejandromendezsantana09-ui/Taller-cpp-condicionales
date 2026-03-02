@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath> 
+
+using namespace std;
+
+int main() {
+    double num1, num2, resultado;
+    char operacion;
+
+    std::cout << "--- Calculadora Inteligente ---" << endl;
+    std::cout << "Ingresa el primer operando: ";
+    std::cin >> num1;
+    std::cout << "Ingresa el operador (+, -, *, /, %): ";
+    std::cin >> operacion;
+    std::cout << "Ingresa el segundo operando: ";
+    std::cin >> num2;
+
+    switch (operacion) {
+        case '+':
+            resultado = num1 + num2;
+            std::cout << "Resultado: " << num1 << " + " << num2 << " = " << resultado << endl;
+            break;
+
+        case '-':
+            resultado = num1 - num2;
+            std::cout << "Resultado: " << num1 << " - " << num2 << " = " << resultado << endl;
+            break;
+
+        case '*':
+            resultado = num1 * num2;
+            std::cout << "Resultado: " << num1 << " * " << num2 << " = " << resultado << endl;
+            break;
+
+        case '/':
+            // Validación de división por cero
+            if (num2 != 0) {
+                resultado = num1 / num2;
+                cout << "Resultado: " << num1 << " / " << num2 << " = " << resultado << endl;
+            } else {
+                std::cout << "Error: No se puede dividir entre cero." << endl;
+            }
+            break;
+
+        case '%':
+          
+            if (num2 != 0) {
+              
+                resultado = fmod(num1, num2);
+                cout << "Residuo: " << num1 << " % " << num2 << " = " << resultado << endl;
+            } else {
+               std:: cout << "Error: No se puede calcular el residuo con divisor cero." << endl;
+            }
+            break;
+        default:
+            std::cout << "Error: Operador no válido." << endl;
+            break;
+    }
+
+    return 0;
+}
