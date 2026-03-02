@@ -1,0 +1,34 @@
+#include <iostream>
+
+
+int main() {
+    int anio;
+
+    std::cout << "--- Verificador de Anio Bisiesto ---" << std::endl;
+    std::cout << "Introduce un anio: ";
+    std::cin >> anio;
+
+    std::cout << "Razonamiento:" << std::endl;
+
+    if (anio % 4 == 0) {
+        if (anio % 100 == 0) {
+            if (anio % 400 == 0) {
+                std::cout << "-> Es divisible entre 4." <<std:: endl;
+                std::cout << "-> Es un siglo (divisible entre 100), pero tambien entre 400." <<std:: endl;
+                std::cout << "RESULTADO: El anio " << anio << " ES BISIESTO." <<std:: endl;
+            } else {
+               std:: cout << "-> Es divisible entre 4." <<std:: endl;
+                std::cout << "-> Es un siglo (divisible entre 100), pero NO entre 400." << std::endl;
+                std::cout << "RESULTADO: El anio " << anio << " NO ES BISIESTO." << std::endl;
+            }
+        } else {
+            std::cout << "-> Es divisible entre 4 y no es el fin de un siglo." << std::endl;
+            std::cout << "RESULTADO: El anio " << anio << " ES BISIESTO." << std::endl;
+        }
+    } else {
+        std::cout << "-> No es divisible entre 4." << std::endl;
+        std::cout << "RESULTADO: El anio " << anio << " NO ES BISIESTO." << std::endl;
+    }
+
+    return 0;
+}
