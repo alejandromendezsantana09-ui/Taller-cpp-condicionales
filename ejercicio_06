@@ -1,0 +1,45 @@
+#include <iostream>
+
+
+
+void imprimir(int a, int b) {
+   std:: cout << "Estado actual: a = " << a << ", b = " << b <<std:: endl;
+}
+
+int main() {
+    int a = 5, b = 10;
+
+    
+    std::cout << "--- (A) Con Variable Temporal ---" << std::endl;
+    imprimir(a, b);
+    int temp = a; 
+    a = b;        
+    b = temp;     
+    std::cout << "Resultado final: "; imprimir(a, b);
+    std::cout << std::endl;
+
+    
+    a = 5; b = 10;
+
+    
+    std::cout << "--- (B) Con Operaciones Aritmeticas ---" << std::endl;
+    imprimir(a, b);
+    a = a + b; 
+    b = a - b; 
+    a = a - b; 
+   std:: cout << "Resultado final: "; imprimir(a, b);
+    std::cout << std::endl;
+
+   
+    a = 5; b = 10;
+
+   
+    std::cout << "--- (C) Con Operador XOR (^) ---" <<std:: endl;
+    imprimir(a, b);
+    a = a ^ b; 
+    b = a ^ b;
+    a = a ^ b;
+   std:: cout << "Resultado final: "; imprimir(a, b);
+
+    return 0;
+}
