@@ -1,0 +1,42 @@
+#include <iostream>
+
+
+int main() {
+    const int LEER     = 4; 
+    const int ESCRIBIR = 2; 
+    const int EJECUTAR = 1; 
+
+    int permisoUsuario;
+
+    std::cout << "--- Sistema de Permisos Bitmask ---" << endl;
+    std::cout << "Ingrese un valor de permisos (0-7): ";
+    std::cin >> permisoUsuario;
+
+    std::cout << "\nAnalizando permisos para el valor " << permisoUsuario << ":" << endl;
+
+    
+    if (permisoUsuario & LEER) {
+       std:: cout << "[X] LEER (4)" << endl;
+    } else {
+       std:: cout << "[ ] LEER" << endl;
+    }
+
+    if (permisoUsuario & ESCRIBIR) {
+       std:: cout << "[X] ESCRIBIR (2)" << endl;
+    } else {
+        std::cout << "[ ] ESCRIBIR" << endl;
+    }
+
+    if (permisoUsuario & EJECUTAR) {
+        std::cout << "[X] EJECUTAR (1)" << endl;
+    } else {
+        std::cout << "[ ] EJECUTAR" << endl;
+    }
+
+    
+    if (permisoUsuario == 0) {
+       std:: cout << "El usuario no tiene ningun permiso." << endl;
+    }
+
+    return 0;
+}
