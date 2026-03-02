@@ -1,0 +1,51 @@
+#include <iostream>
+#include <cmath> 
+
+using namespace std;
+
+int main() {
+    double a, b, c;
+    double pitagoras,hipotenusa;
+    std::cout << "--- Clasificador de Triangulos ---" << endl;
+    std::cout << "Introduce el lado A: "; 
+    std::cin >> a;
+    std::cout << "Introduce el lado B: "; 
+    std::cin >> b;
+    std::cout << "Introduce el lado C: "; 
+    std::cin >> c;
+
+    
+   if ((a + b > c) && (a + c > b) && (b + c > a));
+    std:: cout << "\nEs un triangulo valido." <<std::endl;
+
+      
+   if (a == b && b == c) {
+    std:: cout << "- Tipo: Equilatero" << endl;
+        } else if (a == b || a == c || b == c) {
+            cout << "- Tipo: Isosceles" <<std::endl;
+        } else {
+            cout << "- Tipo: Escaleno" << endl;
+        }
+
+       
+     double mayor = a, x = b, y = c;
+     if (b > mayor) { mayor = b; x = a; y = c; }
+     if (c > mayor) { mayor = c; x = a; y = b; }
+
+    pitagoras = (x * x) + (y * y);
+    hipotenusa = mayor * mayor;
+
+    if (hipotenusa == pitagoras) {
+    std::cout << "- Angulos: Rectangulo (90 grados)" <<std::endl;
+        } else if (hipotenusa < pitagoras) {
+    std:: cout << "- Angulos: Acutangulo (angulos < 90)" <<std::endl;
+        } else {
+    std::cout << "- Angulos: Obtusangulo (un angulo > 90)" <<std::endl;
+        }
+
+    
+    std::cout << "\nError: Los lados no forman un triangulo valido." << std::endl;
+    
+
+    return 0;
+}
